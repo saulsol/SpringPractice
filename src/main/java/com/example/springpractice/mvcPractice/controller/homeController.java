@@ -1,24 +1,27 @@
 package com.example.springpractice.mvcPractice.controller;
 
 import com.example.springpractice.mvcPractice.dto.ParamDto;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.ArrayList;
 
 @Controller
 public class homeController {
 
 
     @GetMapping("/")
-    public String hello(Model model){
+    public String hello(Model model) {
         model.addAttribute("greeting", "HI");
 
         return "index";
     }
 
     @GetMapping("/modelAndView")
-    public ModelAndView hello2(Model model){
+    public ModelAndView hello2(Model model) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("modelAndView", "modelAndView 1");
         modelAndView.setViewName("modelAndView");
@@ -33,11 +36,19 @@ public class homeController {
         return "index";
     }
 
-    @PostMapping("/formPractice")
-    public String formPractice(Model model, @ModelAttribute ParamDto paramDto){
-        System.out.println(paramDto);
-        return "index";
+    @PostMapping("/login")
+    public String loginCheckProcess(String id, String pass){
+        boolean state = true;
+        return state ? "redirect:list" : "redirect:index";
+
     }
-    //'application/x-www-form-urlencoded;charset=UTF-8' -> @RequestBody 필요없음
-    // @ModelAttribute 로 받으면 된다.
+
+    @GetMapping("/list")
+    public String listProcess(Model model){
+        model.addAttribute("basicList", "basicList");
+
+        return "list";
+    }
+
 }
+

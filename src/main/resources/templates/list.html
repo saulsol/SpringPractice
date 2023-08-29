@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-  modelAndView
 
-  <h3 th:text="${modelAndView}"></h3>
+    <h3 th:text="${basicList}"> default value</h3>
 
-
-  <ul>
-      <li th:each="value : ${list}" th:text="${value}"> 기존값</li>
-  </ul>
 </body>
 </html>
