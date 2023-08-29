@@ -24,8 +24,8 @@ public class practiceController {
     }
 
     @GetMapping("/")
-    public String basicPage(){
-        return "basic";
+    public String basicController(){
+        return "리다이렉트된 값입니다.";
     }
 
 

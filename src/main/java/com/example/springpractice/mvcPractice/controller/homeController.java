@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class homeController {
 
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String hello(Model model) {
         model.addAttribute("greeting", "HI");
 
