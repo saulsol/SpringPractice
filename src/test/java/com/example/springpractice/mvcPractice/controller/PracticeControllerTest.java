@@ -23,10 +23,9 @@ class PracticeControllerTest {
 
     @Test
     void requestBody() throws Exception{
-        ObjectMapper objectMapper = new ObjectMapper();
-        RequestBodyDto requestBodyDto = new RequestBodyDto("req", 1L, "pass", "email");
-        String requestBody = objectMapper.writeValueAsString(requestBodyDto);
-        log.info(requestBody);
+
+        String requestBody = "{\"name\":\"req\",\"age\":1,\"password\":\"pass\",\"email\":\"email\"}\n";
+        log.info("log : " + requestBody);
 
         mockMvc.perform(MockMvcRequestBuilders.post("/requestBody")
 

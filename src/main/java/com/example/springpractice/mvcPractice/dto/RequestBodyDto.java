@@ -1,11 +1,11 @@
 package com.example.springpractice.mvcPractice.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Getter
-@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @ToString
 public class RequestBodyDto {
 
@@ -14,16 +14,11 @@ public class RequestBodyDto {
     private String password;
     private String email;
 
-    public RequestBodyDto(){
+   // 기본 생성자도 삭제
+    // 아무 생성자도 없으면 기본 생성자가 생기니깐 새롭게 생성자 생성
 
-    }
 
-    public RequestBodyDto(String name, long age, String password, String email) {
-        this.name = name;
-        this.age = age;
-        this.password = password;
-        this.email = email;
-    }
+    // 생성자와 setter 없앰
 
 
 }

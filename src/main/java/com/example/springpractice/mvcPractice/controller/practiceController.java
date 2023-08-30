@@ -13,36 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.net.URI;
 
-@Controller
+@RestController
 public class practiceController {
 
-//    @GetMapping("/redirect")
-//    public ResponseEntity<?> redirect() {
-//        HttpHeaders headers = new HttpHeaders();
-//        headers.setLocation(URI.create("/"));
-//        return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY) // 301 Moved Permanently
-//                .headers(headers)
-//                .build();
-//    }
-//
-//
-//
-//    @GetMapping("/redirect/prefix")
-//    public String redirectPrefix() {
-//        return "redirect:/";
-//    }
-//
-//
-//    @GetMapping("/")
-//    public String basicController(){
-//        return "index";
-//    }
-//
-//    @PostMapping("requestBody")
-//    public ResponseEntity<RequestBodyDto> testRequestBody(@RequestBody RequestBodyDto requestBodyDto){
-//        return ResponseEntity.ok(requestBodyDto);
-//    }
-//
+
+
+    @PostMapping("requestBody")
+    public ResponseEntity<RequestBodyDto> testRequestBody(@RequestBody RequestBodyDto requestBodyDto){
+        return ResponseEntity.ok(requestBodyDto);
+    }
+
 
 
 
